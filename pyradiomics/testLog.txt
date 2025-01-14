@@ -1,0 +1,184 @@
+DEBUG:radiomics: Getting test case brain1
+DEBUG:radiomics: No data directory specified, using temporary directory "/tmp/pyradiomics/data"
+DEBUG:radiomics: Getting Image file
+DEBUG:radiomics: File brain1_image.nrrd already downloaded
+DEBUG:radiomics: Getting Mask file
+DEBUG:radiomics: File brain1_label.nrrd already downloaded
+INFO:radiomics.featureextractor: Loading parameter file /home/peng/00_github/03_radiomics/240609_Radiomics-research-by-using-Python_SP/pyradiomics/pyradiomics_params/MR_default.yaml
+DEBUG:radiomics.featureextractor: Parameters parsed, input is valid.
+DEBUG:radiomics.featureextractor: Applying settings
+DEBUG:radiomics.featureextractor: Enabled image types: {'Original': {}, 'LoG': {'sigma': [3.0, 5.0]}, 'Wavelet': {}}
+DEBUG:radiomics.featureextractor: Enabled features: {'shape': None, 'firstorder': None, 'glcm': ['Autocorrelation', 'JointAverage', 'ClusterProminence', 'ClusterShade', 'ClusterTendency', 'Contrast', 'Correlation', 'DifferenceAverage', 'DifferenceEntropy', 'DifferenceVariance', 'JointEnergy', 'JointEntropy', 'Imc1', 'Imc2', 'Idm', 'Idmn', 'Id', 'Idn', 'InverseVariance', 'MaximumProbability', 'SumEntropy', 'SumSquares'], 'glrlm': None, 'glszm': None, 'gldm': None, 'ngtdm': None}
+DEBUG:radiomics.featureextractor: Settings: {'normalize': True, 'normalizeScale': 500, 'interpolator': 'sitkLinear', 'resampledPixelSpacing': [2, 2, 0], 'minimumROIDimensions': 1, 'binWidth': 25, 'voxelArrayShift': 1000, 'label': 1}
+DEBUG:radiomics.featureextractor: Disabling all feature classes
+DEBUG:radiomics.featureextractor: Enabling all features in class firstorder
+DEBUG:radiomics.featureextractor: Enabled features: {'firstorder': []}
+INFO:radiomics.featureextractor: Calculating features with label: 1
+DEBUG:radiomics.featureextractor: Enabled images types: {'Original': {}, 'LoG': {'sigma': [3.0, 5.0]}, 'Wavelet': {}}
+DEBUG:radiomics.featureextractor: Enabled features: {'firstorder': []}
+DEBUG:radiomics.featureextractor: Current settings: {'minimumROIDimensions': 1, 'minimumROISize': None, 'normalize': True, 'normalizeScale': 500, 'removeOutliers': None, 'resampledPixelSpacing': [2, 2, 0], 'interpolator': 'sitkLinear', 'preCrop': False, 'padDistance': 5, 'distances': [1], 'force2D': False, 'force2Ddimension': 0, 'resegmentRange': None, 'label': 1, 'additionalInfo': True, 'binWidth': 25, 'voxelArrayShift': 1000}
+INFO:radiomics.featureextractor: Loading image and mask
+DEBUG:radiomics.imageoperations: Force casting mask to UInt32 to ensure correct datatype.
+DEBUG:radiomics.imageoperations: Normalizing image with scale 500
+DEBUG:radiomics.imageoperations: Resampling image and mask
+DEBUG:radiomics.imageoperations: Where resampled spacing is set to 0, set it to the original spacing (mask)
+DEBUG:radiomics.imageoperations: Checking ROI validity
+DEBUG:radiomics.imageoperations: Checking if label 1 is persent in the mask
+DEBUG:radiomics.imageoperations: Comparing physical space of bounding box to physical space of image
+DEBUG:radiomics.imageoperations: ROI bounds (image coordinate space): ((161.5, 83.5, 10.5), (208.5, 153.5, 17.5))
+DEBUG:radiomics.imageoperations: ROI valid, calculating resampling grid
+DEBUG:radiomics.imageoperations: Comparing resampled spacing to original spacing (image
+INFO:radiomics.imageoperations: Applying resampling from spacing [0.78125 0.78125 6.5    ] and size [256 256  25] to spacing [2.  2.  6.5] and size [30, 39, 19]
+DEBUG:radiomics.imageoperations: Resampling image
+DEBUG:radiomics.imageoperations: Resampling mask
+DEBUG:radiomics.imageoperations: Checking mask with label 1
+DEBUG:radiomics.imageoperations: Calculating bounding box
+DEBUG:radiomics.imageoperations: Checking minimum number of dimensions requirements (1)
+DEBUG:radiomics.featureextractor: Image and Mask loaded and valid, starting extraction
+DEBUG:radiomics.imageoperations: Cropping to size [19 27  7]
+DEBUG:radiomics.featureextractor: Creating image type iterator
+INFO:radiomics.featureextractor: Adding image type "Original" with custom settings: {}
+INFO:radiomics.featureextractor: Adding image type "LoG" with custom settings: {'sigma': [3.0, 5.0]}
+INFO:radiomics.featureextractor: Adding image type "Wavelet" with custom settings: {}
+DEBUG:radiomics.featureextractor: Extracting features
+DEBUG:radiomics.imageoperations: Yielding original image
+INFO:radiomics.featureextractor: Calculating features for original image
+DEBUG:radiomics.imageoperations: Cropping to size [19 27  7]
+INFO:radiomics.featureextractor: Computing firstorder
+DEBUG:radiomics.firstorder: Initializing feature class
+DEBUG:radiomics.imageoperations: Discretizing gray levels inside ROI
+DEBUG:radiomics.imageoperations: Calculated 39 bins for bin width 25 with edges: [ 125.  150.  175.  200.  225.  250.  275.  300.  325.  350.  375.  400.
+  425.  450.  475.  500.  525.  550.  575.  600.  625.  650.  675.  700.
+  725.  750.  775.  800.  825.  850.  875.  900.  925.  950.  975. 1000.
+ 1025. 1050. 1075. 1100.])
+DEBUG:radiomics.firstorder: First order feature class initialized
+DEBUG:radiomics.firstorder: Calculating features
+DEBUG:radiomics.imageoperations: Generating LoG images
+INFO:radiomics.imageoperations: Computing LoG with sigma 3
+DEBUG:radiomics.imageoperations: Yielding log-sigma-3-0-mm-3D image
+INFO:radiomics.featureextractor: Calculating features for log-sigma-3-0-mm-3D image
+DEBUG:radiomics.imageoperations: Cropping to size [19 27  7]
+INFO:radiomics.featureextractor: Computing firstorder
+DEBUG:radiomics.firstorder: Initializing feature class
+DEBUG:radiomics.imageoperations: Discretizing gray levels inside ROI
+DEBUG:radiomics.imageoperations: Calculated 24 bins for bin width 25 with edges: [-425. -400. -375. -350. -325. -300. -275. -250. -225. -200. -175. -150.
+ -125. -100.  -75.  -50.  -25.    0.   25.   50.   75.  100.  125.  150.
+  175.])
+DEBUG:radiomics.firstorder: First order feature class initialized
+DEBUG:radiomics.firstorder: Calculating features
+INFO:radiomics.imageoperations: Computing LoG with sigma 5
+DEBUG:radiomics.imageoperations: Yielding log-sigma-5-0-mm-3D image
+INFO:radiomics.featureextractor: Calculating features for log-sigma-5-0-mm-3D image
+DEBUG:radiomics.imageoperations: Cropping to size [19 27  7]
+INFO:radiomics.featureextractor: Computing firstorder
+DEBUG:radiomics.firstorder: Initializing feature class
+DEBUG:radiomics.imageoperations: Discretizing gray levels inside ROI
+DEBUG:radiomics.imageoperations: Calculated 25 bins for bin width 25 with edges: [-450. -425. -400. -375. -350. -325. -300. -275. -250. -225. -200. -175.
+ -150. -125. -100.  -75.  -50.  -25.    0.   25.   50.   75.  100.  125.
+  150.  175.])
+DEBUG:radiomics.firstorder: First order feature class initialized
+DEBUG:radiomics.firstorder: Calculating features
+DEBUG:radiomics.imageoperations: Generating Wavelet images
+INFO:radiomics.imageoperations: Computing Wavelet LLH
+DEBUG:radiomics.imageoperations: Yielding wavelet-LLH image
+INFO:radiomics.featureextractor: Calculating features for wavelet-LLH image
+DEBUG:radiomics.imageoperations: Cropping to size [19 27  7]
+INFO:radiomics.featureextractor: Computing firstorder
+DEBUG:radiomics.firstorder: Initializing feature class
+DEBUG:radiomics.imageoperations: Discretizing gray levels inside ROI
+DEBUG:radiomics.imageoperations: Calculated 52 bins for bin width 25 with edges: [-675. -650. -625. -600. -575. -550. -525. -500. -475. -450. -425. -400.
+ -375. -350. -325. -300. -275. -250. -225. -200. -175. -150. -125. -100.
+  -75.  -50.  -25.    0.   25.   50.   75.  100.  125.  150.  175.  200.
+  225.  250.  275.  300.  325.  350.  375.  400.  425.  450.  475.  500.
+  525.  550.  575.  600.  625.])
+DEBUG:radiomics.firstorder: First order feature class initialized
+DEBUG:radiomics.firstorder: Calculating features
+INFO:radiomics.imageoperations: Computing Wavelet LHL
+DEBUG:radiomics.imageoperations: Yielding wavelet-LHL image
+INFO:radiomics.featureextractor: Calculating features for wavelet-LHL image
+DEBUG:radiomics.imageoperations: Cropping to size [19 27  7]
+INFO:radiomics.featureextractor: Computing firstorder
+DEBUG:radiomics.firstorder: Initializing feature class
+DEBUG:radiomics.imageoperations: Discretizing gray levels inside ROI
+DEBUG:radiomics.imageoperations: Calculated 49 bins for bin width 25 with edges: [-675. -650. -625. -600. -575. -550. -525. -500. -475. -450. -425. -400.
+ -375. -350. -325. -300. -275. -250. -225. -200. -175. -150. -125. -100.
+  -75.  -50.  -25.    0.   25.   50.   75.  100.  125.  150.  175.  200.
+  225.  250.  275.  300.  325.  350.  375.  400.  425.  450.  475.  500.
+  525.  550.])
+DEBUG:radiomics.firstorder: First order feature class initialized
+DEBUG:radiomics.firstorder: Calculating features
+INFO:radiomics.imageoperations: Computing Wavelet LHH
+DEBUG:radiomics.imageoperations: Yielding wavelet-LHH image
+INFO:radiomics.featureextractor: Calculating features for wavelet-LHH image
+DEBUG:radiomics.imageoperations: Cropping to size [19 27  7]
+INFO:radiomics.featureextractor: Computing firstorder
+DEBUG:radiomics.firstorder: Initializing feature class
+DEBUG:radiomics.imageoperations: Discretizing gray levels inside ROI
+DEBUG:radiomics.imageoperations: Calculated 32 bins for bin width 25 with edges: [-375. -350. -325. -300. -275. -250. -225. -200. -175. -150. -125. -100.
+  -75.  -50.  -25.    0.   25.   50.   75.  100.  125.  150.  175.  200.
+  225.  250.  275.  300.  325.  350.  375.  400.  425.])
+DEBUG:radiomics.firstorder: First order feature class initialized
+DEBUG:radiomics.firstorder: Calculating features
+INFO:radiomics.imageoperations: Computing Wavelet HLL
+DEBUG:radiomics.imageoperations: Yielding wavelet-HLL image
+INFO:radiomics.featureextractor: Calculating features for wavelet-HLL image
+DEBUG:radiomics.imageoperations: Cropping to size [19 27  7]
+INFO:radiomics.featureextractor: Computing firstorder
+DEBUG:radiomics.firstorder: Initializing feature class
+DEBUG:radiomics.imageoperations: Discretizing gray levels inside ROI
+DEBUG:radiomics.imageoperations: Calculated 34 bins for bin width 25 with edges: [-450. -425. -400. -375. -350. -325. -300. -275. -250. -225. -200. -175.
+ -150. -125. -100.  -75.  -50.  -25.    0.   25.   50.   75.  100.  125.
+  150.  175.  200.  225.  250.  275.  300.  325.  350.  375.  400.])
+DEBUG:radiomics.firstorder: First order feature class initialized
+DEBUG:radiomics.firstorder: Calculating features
+INFO:radiomics.imageoperations: Computing Wavelet HLH
+DEBUG:radiomics.imageoperations: Yielding wavelet-HLH image
+INFO:radiomics.featureextractor: Calculating features for wavelet-HLH image
+DEBUG:radiomics.imageoperations: Cropping to size [19 27  7]
+INFO:radiomics.featureextractor: Computing firstorder
+DEBUG:radiomics.firstorder: Initializing feature class
+DEBUG:radiomics.imageoperations: Discretizing gray levels inside ROI
+DEBUG:radiomics.imageoperations: Calculated 31 bins for bin width 25 with edges: [-375. -350. -325. -300. -275. -250. -225. -200. -175. -150. -125. -100.
+  -75.  -50.  -25.    0.   25.   50.   75.  100.  125.  150.  175.  200.
+  225.  250.  275.  300.  325.  350.  375.  400.])
+DEBUG:radiomics.firstorder: First order feature class initialized
+DEBUG:radiomics.firstorder: Calculating features
+INFO:radiomics.imageoperations: Computing Wavelet HHL
+DEBUG:radiomics.imageoperations: Yielding wavelet-HHL image
+INFO:radiomics.featureextractor: Calculating features for wavelet-HHL image
+DEBUG:radiomics.imageoperations: Cropping to size [19 27  7]
+INFO:radiomics.featureextractor: Computing firstorder
+DEBUG:radiomics.firstorder: Initializing feature class
+DEBUG:radiomics.imageoperations: Discretizing gray levels inside ROI
+DEBUG:radiomics.imageoperations: Calculated 27 bins for bin width 25 with edges: [-300. -275. -250. -225. -200. -175. -150. -125. -100.  -75.  -50.  -25.
+    0.   25.   50.   75.  100.  125.  150.  175.  200.  225.  250.  275.
+  300.  325.  350.  375.])
+DEBUG:radiomics.firstorder: First order feature class initialized
+DEBUG:radiomics.firstorder: Calculating features
+INFO:radiomics.imageoperations: Computing Wavelet HHH
+DEBUG:radiomics.imageoperations: Yielding wavelet-HHH image
+INFO:radiomics.featureextractor: Calculating features for wavelet-HHH image
+DEBUG:radiomics.imageoperations: Cropping to size [19 27  7]
+INFO:radiomics.featureextractor: Computing firstorder
+DEBUG:radiomics.firstorder: Initializing feature class
+DEBUG:radiomics.imageoperations: Discretizing gray levels inside ROI
+DEBUG:radiomics.imageoperations: Calculated 22 bins for bin width 25 with edges: [-250. -225. -200. -175. -150. -125. -100.  -75.  -50.  -25.    0.   25.
+   50.   75.  100.  125.  150.  175.  200.  225.  250.  275.  300.])
+DEBUG:radiomics.firstorder: First order feature class initialized
+DEBUG:radiomics.firstorder: Calculating features
+DEBUG:radiomics.imageoperations: Yielding approximation (wavelet-LLL) image
+INFO:radiomics.featureextractor: Calculating features for wavelet-LLL image
+DEBUG:radiomics.imageoperations: Cropping to size [19 27  7]
+INFO:radiomics.featureextractor: Computing firstorder
+DEBUG:radiomics.firstorder: Initializing feature class
+DEBUG:radiomics.imageoperations: Discretizing gray levels inside ROI
+DEBUG:radiomics.imageoperations: Calculated 79 bins for bin width 25 with edges: [ 550.  575.  600.  625.  650.  675.  700.  725.  750.  775.  800.  825.
+  850.  875.  900.  925.  950.  975. 1000. 1025. 1050. 1075. 1100. 1125.
+ 1150. 1175. 1200. 1225. 1250. 1275. 1300. 1325. 1350. 1375. 1400. 1425.
+ 1450. 1475. 1500. 1525. 1550. 1575. 1600. 1625. 1650. 1675. 1700. 1725.
+ 1750. 1775. 1800. 1825. 1850. 1875. 1900. 1925. 1950. 1975. 2000. 2025.
+ 2050. 2075. 2100. 2125. 2150. 2175. 2200. 2225. 2250. 2275. 2300. 2325.
+ 2350. 2375. 2400. 2425. 2450. 2475. 2500. 2525.])
+DEBUG:radiomics.firstorder: First order feature class initialized
+DEBUG:radiomics.firstorder: Calculating features
+DEBUG:radiomics.featureextractor: Features extracted
